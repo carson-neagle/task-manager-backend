@@ -10,7 +10,7 @@ exports.getAllTasks = async(req, res) => {
     }
 }
 
-exports.getTaskById = async (req, res) => {
+exports.getTaskById = async(req, res) => {
     try {
         const {_id} = req.params
         const task = await Task.findOne({_id})
@@ -54,7 +54,7 @@ exports.createTask = async (req, res) => {
         }).save()
         res.json({"message": String(error)})
     } catch (error) {
-        res.status(400).json({"message": Stirng(error)})
+        res.status(400).json({"message": String(error)})
     }
 }
 
