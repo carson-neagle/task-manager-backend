@@ -21,7 +21,7 @@ exports.getTaskById = async (req, res) => {
         }
     }
 
-exports.deleteTaskById = async (res, res) => {
+exports.deleteTaskById = async (req, res) => {
     try {
         const {_id} = req.params
         const task = await Task.findONe({_id})
@@ -63,7 +63,7 @@ exports.updateTask = async(req, res) => {
         const { taskId } = req.body
         const { id } = req.params
         const task = await task.findById(id)
-        recipe.newTask = await Task.findByIdAndUpdate(id, task)
+        task.newTask = await Task.findByIdAndUpdate(id, task)
 
         res.send(updatedTask)
     } catch (error) {
