@@ -8,12 +8,12 @@ const taskSchema = new mongoose.Schema({
 
     type: {
         type: String, 
-        enum: ["Personal", "Work", "School", "Chore"], 
+        enum: ["personal", "work", "school", "chore"], 
         required: true
     },
 
     priority: {
-        enum: ["High", "Medium", "Low"]
+        enum: ["high", "medium", "low"]
     },
 
     image: {
