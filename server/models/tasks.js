@@ -16,10 +16,6 @@ const taskSchema = new mongoose.Schema({
         type: String,
         enum: ["high", "medium", "low"],
         required: true
-    },
-
-    image: {
-        type: String
     }
 })
 

@@ -34,12 +34,11 @@ exports.deleteTaskById = async (req, res) => {
 
 exports.createTask = async (req, res) => {
     try {
-        const { name, type, priority, image} = req.body
+        const { name, type, priority} = req.body
         const createdTask = await new Task({
             name, 
             type, 
             priority, 
-            image
         }).save()
         res.json({"message": 'Created task'})
     } catch (error) {
