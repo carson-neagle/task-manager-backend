@@ -23,17 +23,6 @@ exports.getTaskById = async(req, res) => {
 
 exports.deleteTaskById = async (req, res) => {
     try {
-        const {_id} = req.params
-        const task = await Task.findONe({_id})
-
-        res.json(task)
-    } catch (error) {
-        res.status(500).json({"message": String(error)})
-    }
-}
-
-exports.deleteTaskById = async (req, res) => {
-    try {
         const { id } = req.params
         const task = await Task.findOneAndDelete({_id: id})
 
@@ -52,7 +41,7 @@ exports.createTask = async (req, res) => {
             priority, 
             image
         }).save()
-        res.json({"message": String(error)})
+        res.json({"message": 'Created task'})
     } catch (error) {
         res.status(400).json({"message": String(error)})
     }
