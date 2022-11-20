@@ -8,6 +8,6 @@ router.get('/id/:_id', taskController.getTaskById);
 router.delete('/:id', taskController.deleteTaskById);
 router.post('/create', taskController.createTask);
 router.put('/add/task/:id', taskController.updateTask);
-router.get('/seed', seed.insertTaskData)
+router.post('/seed', seed.insertTaskData)
 
 module.exports = router;
